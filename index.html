@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="app/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Портфолио</title>
+
+  <style>
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+      display: block;
+      padding: 0 17px;
+      width: 100%;
+      height: 45px;
+      line-height: 45px;
+      font: 600 18px 'Roboto', sans-serif;
+      color: #000;
+      background: transparent;
+      border: 1px solid rgba(0,0,0,.11);
+      border-radius: 3px;
+      -webkit-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      transition: all .3s ease;
+    }
+    ::-webkit-input-placeholder {
+      opacity: 1;
+      font-weight: 300;
+      color: #393939;
+    }
+    ::-moz-placeholder {
+      opacity: 1;
+      font-weight: 300;
+      color: #393939;
+    }
+    :-moz-placeholder {
+      opacity: 1;
+      font-weight: 300;
+      color: #393939;
+    }
+    :-ms-input-placeholder {
+      opacity: 1;
+      font-weight: 300;
+      color: #393939;
+    }
+    .some-form {
+      width: 30%;
+      margin: 36px auto;
+    }
+    .form {
+      padding: 30px;
+      background: #f7fafb;
+      color: #000;
+      border-radius: 3px;
+      -webkit-box-shadow: 0 39px 57px rgba(0,0,0,.19);
+      -moz-box-shadow: 0 39px 57px rgba(0,0,0,.19);
+      box-shadow: 0 39px 57px rgba(0,0,0,.19);
+    }
+    .some-form__header {
+      margin-bottom: 41px;
+      padding-top: 12px;
+      font-size: 26px;
+      line-height: 1;
+      letter-spacing: -0.2px;
+      text-align: center;
+    }
+    .some-form__line {
+      display: block;
+      position: relative;
+      margin-bottom: 15px;
+    }
+    .some-form__line-required input[type="text"],
+    .some-form__line-required input[type="tel"],
+    .some-form__line-required input[type="email"] {
+      border-color: #f45a57;
+    }
+    .some-form__line-required .some-form__hint {
+      opacity: 1;
+      z-index: auto;
+    }
+    .some-form__hint {
+      z-index: -1;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: -6px;
+      padding: 0 12px;
+      width: 100%;
+      background: #f45a57;
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.333333;
+      -webkit-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      transition: all .3s ease;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 15px 16px;
+      text-align: center;
+      font-weight: 600;
+      line-height: 1;
+      background: #19b5ca;
+      color: #fff;
+      border: 2px solid #19b5ca;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-box-shadow: 0 20px 43px rgba(18,159,178,.35);
+      -moz-box-shadow: 0 20px 43px rgba(18,159,178,.35);
+      box-shadow: 0 20px 43px rgba(18,159,178,.35);
+      -webkit-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      transition: all .3s ease;
+    }
+    .button:hover {
+      background: #0e9aad;
+      border-color: #0e9aad;
+    }
+    .button_wide {
+      width: 100%;
+    }
+    .button_submit {
+      font-size: 19px;
+    }
+
+    @media (max-width: 1299px) {
+      .some-form {
+        width: 40%;
+      }
+    }
+    @media (max-width: 991px) {
+      .some-form {
+        width: 50%;
+      }
+    }
+    @media (max-width: 768px) {
+      .some-form {
+        width: 60%;
+      }
+    }
+    @media (max-width: 520px) {
+      .some-form {
+        width: 80%;
+      }
+    }
+  </style>
+
+  <!--<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0px auto;
+
+    }
+    .mysql{
+      max-height: 200px;
+    }
+  </style>
+
+  <script defer src="js/simple-adaptive-slider.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // активация слайдера
+      new ItcSimpleSlider('.itcss', {
+        loop: true,
+        autoplay: true,
+        swipe: true
+      });
+    });
+  </script>-->
+</head>
+
+<body>
+
+<div class="some-form">
+  <form action="" method="" class="form js-form-validate">
+    <div class="some-form__header title">Заголовок формы #1</div>
+
+    <div class="some-form__line">
+      <input type="text" name="name" placeholder="Ваше имя *" data-validate>
+      <span class="some-form__hint">Обязательно для заполнения</span>
+    </div>
+    <div class="some-form__line">
+      <input type="tel" name="phone" placeholder="Телефон *" data-validate>
+      <span class="some-form__hint">Обязательно для заполнения</span>
+    </div>
+    <div class="some-form__line">
+      <input type="email" name="mail" placeholder="E-mail">
+    </div>
+
+    <div class="some-form__submit">
+      <input type="submit" value="Отправить" class="button button_submit button_wide">
+    </div>
+  </form>
+</div>
+
+
+
+<script>
+  $(document).ready(function(){
+
+    $('input[type="tel"]').inputmask('+7 (999) 999 99 99', {
+      clearMaskOnLostFocus: true,
+    });
+
+    $('.js-form-validate').submit(function () {
+      var form = $(this);
+      var field = [];
+      form.find('input[data-validate]').each(function () {
+        field.push('input[data-validate]');
+        var value = $(this).val(),
+                line = $(this).closest('.some-form__line');
+        for(var i=0;i<field.length;i++) {
+          if( !value ) {
+            line.addClass('some-form__line-required');
+            setTimeout(function() {
+              line.removeClass('some-form__line-required')
+            }.bind(this),2000);
+            event.preventDefault();
+          }
+        }
+      });
+    });
+  });
+</script>
+
+
+
+<!--
+<header class="header">
+  <div class="block-sidebar">
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <button class="navigation__item2" id="button" value="0" onclick='palitra0();'>Базовый</button>
+      <button class="navigation__item2" id="button" value="1" onclick='palitra1();'>Розовый</button>
+      <button class="navigation__item2" id="button" value="2" onclick='palitra2();'>Оранжевый</button>
+      <button class="navigation__item2" id="button" value="3" onclick='palitra3();'>Желтый</button>
+    </div>
+    <div id="main">
+      <button class="openbtn" title="Изменение цвета" onclick="openNav()">☰</button>
+    </div>
+  </div>
+  <script>
+
+  </script>
+
+  <div class="header__name">
+    <div class="header__logo">
+      <a class="tooltip" href="index.php" title="Главное"><img src="img/logo.svg" alt="логотип">
+        <span class="tooltiptext">Главная</span></a>
+    </div>
+    <div class="header__text">
+      <p class="text-logo">веб-разработчик</p>
+    </div>
+  </div>
+
+  <nav class="navigation">
+    <a class="navigation__item perf" title="Главная" >Главная</a>
+    <a class="navigation__item" href="experience.html">Навыки</a>
+    <a class="navigation__item" href="skills.html">Опыт</a>
+    <a class="navigation__item" href="works.html">Работы</a>
+    <a class="navigation__item contacts" id="#">Контакты</a>
+    <a class="navigation__item" href="blog.html"> &lt;!&ndash;onclick="shake(this, fadeOut)"&ndash;&gt;Блог</a>
+    <a class="navigation__item" id="myBtn" class="myBtn">Связаться</a>
+    &lt;!&ndash;<button class="navigation__item" onClick="shake(this, fadeOut)">Щелкните меня!</button>&ndash;&gt;
+    &lt;!&ndash; Триггер/Открыть модальный &ndash;&gt;
+    <script src="app/products/read-one-product.js"></script>
+
+
+  </nav>
+
+
+</header>
+
+
+
+<main class="back">
+  <section class="hero">
+    <div class="hero__text">
+      <h1 class="hero__h1">
+        Добро пожаловать на сайт,
+        посвященный веб-разработке!
+      </h1>
+      <p class="hero__p">Что такое веб-разработка, спросите вы? Проще говоря, это процесс создания веб-сайтов
+        и веб-приложений с использованием таких языков программирования, как HTML, CSS и JavaScript.
+
+        Что входит в веб-разработку:
+
+        Фронтенд-разработка
+        Бэкенд-разработка
+        Веб-дизайн
+        Создание веб-контента
+        Веб-тестирование и отладка
+        Веб-развертывание и обслуживание</p>
+    </div>
+
+    <img class="hero__img" src="img/font.jpg" alt="эмоджи">
+  </section>
+
+
+
+  <div id="page-content"></div>
+
+  <article class="block-works">
+    <div class="block-works__text">
+      <h2 class="block-skills__h2">
+        Языки
+      </h2>
+      <div class="itcss">
+        <div class="itcss__wrapper">
+          <div class="itcss__items">
+            <div class="itcss__item">
+              <img src="img/css.png" alt="CSS">
+            </div>
+            <div class="itcss__item">
+              <img src="img/html.png" alt="HTML">
+            </div>
+            <div class="itcss__item">
+              <img src="img/JavaScript.png" alt="JavaScript">
+            </div>
+            <div class="itcss__item">
+              <img src="img/i.png" alt="PhP" height="250px" width="250px">
+            </div>
+            <div class="itcss__item">
+              <img class="mysql" src="img/mysql.png" alt="Mysql">
+            </div>
+          </div>
+        </div>
+        <button class="itcss__btn itcss__btn_prev" role="button" data-slide="prev"></button>
+        <button class="itcss__btn itcss__btn_next" role="button" data-slide="next"></button>
+      </div>
+    </div>
+    <div class="block-works__blocks">
+      <h2 class="block-works__h2">Работы</h2>
+      <p class="block-works__p">Ниже вы можете ознакомиться с моими недавними работами</p>
+
+      <div class="block-works__row">
+        <div class="block-works__item">
+          <h3 class="block-works__item-h3">Веб-сайт агентства</h3>
+          <p class="block-works__item-p">При создании этого проекта использовались такие технологии, как:
+            html5, css3, JavaScript и php.</p>
+        </div>
+        <div class="block-works__item">
+          <h3 class="block-works__item-h3">Лендинг строительной
+            фирмы</h3>
+          <p class="block-works__item-p">Данный проект отличается ярким дизайном и кричащими слоганами.
+          </p>
+        </div>
+      </div>
+
+
+
+      <div class="block-works__row2">
+        <div class="block-works__item2">
+          <h3 class="block-works__item-h3">Веб-сайт агентства</h3>
+          <p class="block-works__item-p">При создании этого проекта использовались такие технологии, как:
+            html5, css3, JavaScript и php.</p>
+        </div>
+        <div class="block-works__item2">
+          <h3 class="block-works__item-h32">Лендинг строительной
+            фирмы</h3>
+          <p class="block-works__item-p2">Данный проект отличается ярким дизайном и кричащими слоганами.
+          </p>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </article>
+
+
+  &lt;!&ndash; Триггер/Открыть модальный &ndash;&gt;
+
+  &lt;!&ndash; Модальный &ndash;&gt;
+  <div id="myModal" class="modal">
+    <div class="modal-block">
+      &lt;!&ndash; Модальное содержание &ndash;&gt;
+      <div class="modal-content">
+
+        <section class="modal-form">
+          <div class="container feedback-form">
+            <div class="feedback-form__header">
+              Связаться со мной
+            </div>
+            <form enctype="multipart/form-data" method="post" id="form">
+              <div class="feedback-form__content">
+                <input type="text" class="input-box" name="name" placeholder="Константин Максимович">
+                <input type="text" class="input-box" name="email" placeholder="example@mail.com">
+                <input placeholder="+7 777 77 77 777" name="number" type="text" >
+                <textarea class="input-box-message-box" name="message" ></textarea>
+                &lt;!&ndash;<input type="file" name="userfile[]" multiple id="userfile" class="w100" accept="image/*">&ndash;&gt;
+                <div class="button-form">
+                  <input type="submit" class="button" value="Отправить сообщение">
+                  <span class="close">Закрыть</span>
+                </div>
+
+
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="logo"><img src="img/logo.svg" alt="логотип"></div>
+    <div class="footer-content"> Этот сайт был создан Халяпин Константин. All rights reserved © 2023</div>
+    <div class="icons">
+      <button><i class="fa-solid fa-phone"></i></button>
+      <button><i class="fa-brands fa-whatsapp"></i></button>
+      <button><i class="fa-brands fa-discord"></i></button>
+      <button><i class="fa-brands fa-vk"></i></button>
+      <button><i class="fa-brands fa-telegram"></i></button>
+    </div>
+  </footer>
+</main>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+<script>
+  $(function () {
+    'use strict';
+    $('#form').on('submit', function (e) {
+      e.preventDefault();
+      var fd = new FormData(this);
+      $.ajax({
+        url: 'send.php',
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        data: fd,
+        success: function (msg) {
+          // alert(msg);
+          if (msg === 'ok') {
+            alert('Отправлено')
+          } else {
+            alert('Ошибка')
+          }
+        }
+      });
+    });
+  });
+</script>
+-->
+
+</html>

@@ -1,0 +1,66 @@
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Sora', sans-serif; */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+}
+
+
+
+
+:root {
+    --black-color: #FFFFFF;
+    --white-color: #6d6c72;
+    --accent-color: #1F2833;
+}
+
+
+
+
+
+.contacts {
+    width: 1400px;
+    margin: 0 auto;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-top: 100px;
+
+
+}
+
+.contacts__text {
+    width: 1000px;
+    height: 256px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 134px;
+    padding-right: 50px;
+    text-align: center;
+
+
+}
+
+.contacts__p {
+    margin-left: auto;
+    margin-right: auto;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 22px;
+justify-content: center;
+
+    color: var(--white-color);
+}
+
+.contacts__img {
+    margin-top: 170px;
+    max-width: 900px;
+    max-height: 800px;
+}

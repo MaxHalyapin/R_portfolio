@@ -1,0 +1,44 @@
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Sora', sans-serif; */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+}
+
+
+
+
+.block-works__row {
+    display: flex;
+    margin: 0 auto;
+
+
+
+}
+.p1{
+    padding-top: 20px;
+
+    font-size: 20px;
+}
+.p2{
+    padding-top: 20px;
+    padding-left: 50px;
+    font-size: 20px;
+}
+.image1 {
+    max-width: 800px;
+    max-height: 500px;
+}
+
+.image2{
+    max-width: 700px;
+    max-height: 600px;
+    padding-left: 50px;
+}
+
+.block-works__item {
+
+
+}
+
